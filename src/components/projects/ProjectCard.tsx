@@ -10,17 +10,17 @@ const statusLabel: Record<Project["status"], string> = {
   archived: "Archived",
 };
 
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({ project }: Readonly<{ project: Project }>) {
   const [imageFailed, setImageFailed] = useState(false);
 
   return (
-    <article className="group relative -mx-4 border-t border-line px-4 pt-5 pb-1 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:bg-surface">
+    <article className="group relative -mx-4 border-t border-line px-4 pt-5 pb-1 transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:bg-surface/80">
       <Link
         href={`/projects/${project.slug}`}
-        className="relative mb-5 block aspect-[16/9] overflow-hidden rounded-soft border border-line bg-accent-soft"
+        className="relative mb-5 block aspect-[16/9] overflow-hidden rounded-soft border border-line bg-accent-soft shadow-[0_12px_30px_rgb(var(--c-ink)/0.06)]"
         aria-label={`View the ${project.title} case study`}
       >
-        <div className="absolute inset-0 flex items-center justify-center bg-[linear-gradient(135deg,rgb(var(--c-accent-soft)),rgb(var(--c-surface)))] px-8">
+        <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle_at_75%_20%,rgb(var(--c-accent)/.18),transparent_30%),linear-gradient(135deg,rgb(var(--c-accent-soft)),rgb(var(--c-surface)))] px-8">
           <p className="text-center font-display text-2xl font-semibold text-ink sm:text-3xl">
             {project.title}
           </p>

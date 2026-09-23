@@ -4,24 +4,25 @@
 
 @layer base {
   :root {
-    /* Light: cool paper, pine ink, single green accent. */
-    --c-paper: 243 244 241;
-    --c-surface: 251 251 250;
-    --c-ink: 23 33 29;
-    --c-muted: 91 104 98;
-    --c-accent: 31 111 92;
-    --c-accent-soft: 214 233 226;
-    --c-line: 213 217 211;
+    --c-paper: 247 246 242;
+    --c-surface: 255 254 250;
+    --c-ink: 25 29 35;
+    --c-muted: 91 96 104;
+    --c-accent: 224 82 57;
+    --c-accent-soft: 250 225 216;
+    --c-line: 218 216 209;
+    --c-teal: 20 132 124;
   }
 
   .dark {
-    --c-paper: 15 20 18;
-    --c-surface: 22 28 25;
-    --c-ink: 232 235 231;
-    --c-muted: 151 162 156;
-    --c-accent: 79 209 165;
-    --c-accent-soft: 26 48 41;
-    --c-line: 38 48 43;
+    --c-paper: 17 21 28;
+    --c-surface: 24 30 40;
+    --c-ink: 239 237 230;
+    --c-muted: 159 166 177;
+    --c-accent: 255 120 92;
+    --c-accent-soft: 67 42 42;
+    --c-line: 54 62 74;
+    --c-teal: 75 204 190;
   }
 
   html {
@@ -32,6 +33,11 @@
 
   body {
     @apply bg-paper text-ink font-sans text-body antialiased;
+    background-image:
+      linear-gradient(rgb(var(--c-line) / 0.22) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--c-line) / 0.22) 1px, transparent 1px);
+    background-size: 44px 44px;
+    background-position: center top;
   }
 
   ::selection {
@@ -42,7 +48,9 @@
     @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-paper rounded-sharp;
   }
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     @apply font-display font-semibold text-balance;
   }
 }
@@ -64,7 +72,10 @@
 
   .link-underline {
     @apply relative text-ink no-underline;
-    background-image: linear-gradient(rgb(var(--c-accent)), rgb(var(--c-accent)));
+    background-image: linear-gradient(
+      rgb(var(--c-accent)),
+      rgb(var(--c-accent))
+    );
     background-size: 100% 1px;
     background-repeat: no-repeat;
     background-position: 0 100%;
@@ -73,6 +84,38 @@
 
   .link-underline:hover {
     background-size: 0% 1px;
+  }
+
+  .ambient-panel {
+    background:
+      radial-gradient(
+        circle at 82% 12%,
+        rgb(var(--c-accent) / 0.14),
+        transparent 28%
+      ),
+      radial-gradient(
+        circle at 12% 88%,
+        rgb(var(--c-teal) / 0.12),
+        transparent 26%
+      ),
+      rgb(var(--c-surface) / 0.82);
+    box-shadow: 0 24px 80px rgb(var(--c-ink) / 0.1);
+  }
+
+  .signal-line {
+    animation: signal-drift 7s ease-in-out infinite;
+  }
+}
+
+@keyframes signal-drift {
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0.42;
+  }
+  50% {
+    transform: translateX(18px);
+    opacity: 0.9;
   }
 }
 

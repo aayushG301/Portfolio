@@ -4,10 +4,10 @@ export const profile = {
   role: "Full-Stack Developer",
 
   // Rotates in the hero. Keep each phrase short — they share one line.
-  rotatingPhrases: ["scalable systems", "practical products", "backend services"],
+  rotatingPhrases: ["resilient backend systems", "scalable REST APIs", "production-ready products", "full-stack architectures"],
 
   tagline:
-    "I build backend systems that hold up under real load — async pipelines, secure APIs, and full-stack products shipped end to end, not just demoed.",
+    "Software Engineer architecting reliable backend systems, secure REST APIs, and production-ready full-stack applications built to scale.",
 
   location: "Ghaziabad, Uttar Pradesh, India",
 
