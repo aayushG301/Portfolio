@@ -18,15 +18,15 @@ Node 18 or newer.
 
 ## Before you deploy — things to fill in
 
-| What | Where |
-| --- | --- |
-| Your real email address | `src/data/profile.ts` → `email` |
-| Your resume PDF | already dropped in at `public/resume/resume.pdf` — replace when you have a newer version |
-| Your Codeforces and CodeChef handles | `src/data/links.ts` → `codingProfiles` (currently placeholders) |
-| Confirm your LeetCode URL | `src/data/links.ts` → `codingProfiles` |
-| Live demo links | `src/data/projects.ts` → each project's `links.live` |
-| Project screenshots | `public/images/projects/*.png` |
-| Real domain | `index.html` → `<link rel="canonical">` |
+| What                                 | Where                                                                                    |
+| ------------------------------------ | ---------------------------------------------------------------------------------------- |
+| Your real email address              | `src/data/profile.ts` → `email`                                                          |
+| Your resume PDF                      | already dropped in at `public/resume/resume.pdf` — replace when you have a newer version |
+| Your Codeforces and CodeChef handles | `src/data/links.ts` → `codingProfiles` (currently placeholders)                          |
+| Confirm your LeetCode URL            | `src/data/links.ts` → `codingProfiles`                                                   |
+| Live demo links                      | `src/data/projects.ts` → each project's `links.live`                                     |
+| Project screenshots                  | `public/images/projects/*` — set the matching `image` path in `src/data/projects.ts`     |
+| Real domain                          | `index.html` → `<link rel="canonical">`                                                  |
 
 Nothing else is a placeholder. Everything not listed above is real content.
 
@@ -56,6 +56,10 @@ A whole new category is one object. The UI reads whatever is in the array.
 
 `src/data/projects.ts`. Copy an existing object, change the fields, save.
 It appears in the grid, in the filters, and at `/projects/<slug>` automatically.
+
+Set `image` to a file in `public/images/projects/` when a project has a screenshot.
+The card shows a branded fallback until an image is available, so the layout stays
+intact while a new project is being added.
 
 Only these fields are required:
 
@@ -104,15 +108,15 @@ This was built so the migration is a weekend, not a rewrite. Three rules were fo
 
 ### What you actually change
 
-| File | Change |
-| --- | --- |
-| `src/lib/navigation.tsx` | `Link` → `next/link`, `useRouteParam` → `useParams` from `next/navigation`, delete `useScrollToTop` |
-| `src/lib/seo.ts` | delete — replaced by each route's `metadata` export |
-| `src/App.tsx` | delete — routes become folders |
-| `src/main.tsx` | delete — Next owns the entry point |
-| `src/layouts/RootLayout.tsx` | becomes `app/layout.tsx`, `<Outlet />` becomes `{children}` |
-| `index.html` | `<head>` contents move into the root `metadata` export |
-| `vite.config.ts`, `tsconfig.node.json` | delete |
+| File                                   | Change                                                                                              |
+| -------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `src/lib/navigation.tsx`               | `Link` → `next/link`, `useRouteParam` → `useParams` from `next/navigation`, delete `useScrollToTop` |
+| `src/lib/seo.ts`                       | delete — replaced by each route's `metadata` export                                                 |
+| `src/App.tsx`                          | delete — routes become folders                                                                      |
+| `src/main.tsx`                         | delete — Next owns the entry point                                                                  |
+| `src/layouts/RootLayout.tsx`           | becomes `app/layout.tsx`, `<Outlet />` becomes `{children}`                                         |
+| `index.html`                           | `<head>` contents move into the root `metadata` export                                              |
+| `vite.config.ts`, `tsconfig.node.json` | delete                                                                                              |
 
 ### Route mapping
 

@@ -66,8 +66,17 @@ export function Navbar() {
       }
     >
       <Container className="flex h-16 items-center justify-between gap-6">
-        <Link href="/" className="font-display text-lead font-semibold tracking-tight">
-          {profile.name}
+        <Link
+          href="/"
+          className="flex items-center gap-2 font-display text-lead font-semibold tracking-tight"
+        >
+          <img
+            src="/image.jpg"
+            alt=""
+            className="h-8 w-8 rounded-full border border-line object-cover"
+            aria-hidden="true"
+          />
+          <span>{profile.name}</span>
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex" aria-label="Main">

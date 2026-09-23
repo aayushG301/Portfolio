@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Aayush Garg portfolio</title>
+  <desc id="desc">Aayush Garg, full-stack developer building scalable systems and practical products.</desc>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#122b25"/><stop offset="1" stop-color="#0b1512"/></linearGradient></defs>
+  <rect width="1200" height="630" fill="url(#bg)"/><path d="M780 0h420v630H780z" fill="#1f6f5c" opacity=".22"/><path d="M930 0h270v630H930z" fill="#68e0bb" opacity=".08"/>
+  <circle cx="92" cy="88" r="12" fill="#68e0bb"/><text x="130" y="98" font-family="monospace" font-size="20" letter-spacing="3" fill="#a9d9c7">AAYUSHGARG.DEV</text>
+  <text x="92" y="270" font-family="sans-serif" font-size="76" font-weight="700" fill="#f3f5f1">Aayush Garg</text><text x="96" y="340" font-family="monospace" font-size="28" fill="#68e0bb">FULL-STACK DEVELOPER</text><text x="96" y="420" font-family="sans-serif" font-size="24" fill="#c0d0c9">Scalable systems. Practical products.</text>
+  <g fill="none" stroke="#68e0bb" stroke-width="3" opacity=".7"><path d="M870 210h170v90H870z"/><path d="M820 390h260v90H820z"/><path d="M1040 255l80 90-80 90"/><path d="M870 300l-50 90"/></g><circle cx="870" cy="210" r="8" fill="#68e0bb"/><circle cx="1080" cy="480" r="8" fill="#68e0bb"/>
+</svg>

@@ -1,6 +1,5 @@
 import type { Project } from "@/types";
 
-
 export const projects: Project[] = [
   {
     slug: "bulkflow",
@@ -14,7 +13,15 @@ export const projects: Project[] = [
     featured: true,
     status: "building",
     year: "2026",
-    technologies: ["React", "Node.js", "Express", "MongoDB", "Redis", "BullMQ", "Docker"],
+    technologies: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Redis",
+      "BullMQ",
+      "Docker",
+    ],
     image: "/images/projects/bulkflow.png",
     links: {
       github: "https://github.com/aayushG301/BulkFlow",
@@ -34,8 +41,14 @@ export const projects: Project[] = [
         { label: "API", note: "Creates job record, returns immediately" },
         { label: "Queue", note: "Redis + BullMQ, retries with backoff" },
         { label: "Worker", note: "Batch validation, cleaning, AI enrichment" },
-        { label: "Database", note: "Row results and per-job progress counters" },
-        { label: "Results", note: "Cleaned file plus an error report to download" },
+        {
+          label: "Database",
+          note: "Row results and per-job progress counters",
+        },
+        {
+          label: "Results",
+          note: "Cleaned file plus an error report to download",
+        },
       ],
     },
 
@@ -94,7 +107,15 @@ export const projects: Project[] = [
     featured: true,
     status: "live",
     year: "2026",
-    technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "Zod", "JWT"],
+    technologies: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Tailwind CSS",
+      "Zod",
+      "JWT",
+    ],
     image: "/images/projects/okla.png",
     links: {
       github: "https://github.com/aayushG301/Okla",
@@ -108,12 +129,16 @@ export const projects: Project[] = [
       "Role-based authorization enforced in middleware rather than scattered through controllers, with every route validated by a Zod schema before it reaches business logic. The backend is organised per feature — each module carries its own model, validation, service, controller and routes.",
 
     architecture: {
-      summary: "Feature-module backend, with a matching per-feature structure on the client.",
+      summary:
+        "Feature-module backend, with a matching per-feature structure on the client.",
       flow: [
         { label: "Component", note: "Renders, holds no request logic" },
         { label: "Hook", note: "Owns loading, error and refetch state" },
         { label: "Feature API", note: "One module per feature, typed calls" },
-        { label: "Express route", note: "Zod validation, then auth middleware" },
+        {
+          label: "Express route",
+          note: "Zod validation, then auth middleware",
+        },
         { label: "Service", note: "Business rules, no HTTP knowledge" },
         { label: "MongoDB", note: "Mongoose models per feature" },
       ],
@@ -143,7 +168,10 @@ export const projects: Project[] = [
       "That consistent response shapes make a frontend dramatically simpler to write",
     ],
 
-    futureImprovements: ["Certificates on course completion", "Instructor analytics"],
+    futureImprovements: [
+      "Certificates on course completion",
+      "Instructor analytics",
+    ],
   },
 
   {

@@ -7,10 +7,13 @@ export function Footer() {
     <footer className="border-t border-line py-10">
       <Container className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-meta text-muted">
-          {profile.name} — Portfolio 
+          © {new Date().getFullYear()} {profile.name} — Portfolio
         </p>
 
-        <Link href="/links" className="text-meta font-medium text-accent link-underline">
+        <Link
+          href="/links"
+          className="text-meta font-medium text-accent link-underline"
+        >
           All links
         </Link>
       </Container>
